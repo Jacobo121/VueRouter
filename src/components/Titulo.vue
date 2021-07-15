@@ -1,0 +1,15 @@
+<template lang="">
+    <div>
+        <h1>{{texto}}</h1>
+    </div>
+</template>
+<script>
+export default {
+    props: {
+        texto: String
+    }
+}
+</script>
+<style lang="">
+    
+</style>
