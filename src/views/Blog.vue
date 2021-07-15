@@ -1,10 +1,14 @@
 <template lang="">
     <div>   
         <Titulo texto="Titulo de mi Blog" />
-        <button @click="consumirApi">Consumir Api</button>
+        <!-- <button @click="consumirApi">Consumir Api</button> -->
 
         <div v-for="item in arrayBlog" :key="item.id">
-            <h3>{{item.title}}</h3>
+            <router-link :to="`/blog/${item.id}`" >
+                <ul>
+                    <li>{{item.id}} | {{item.title}}</li>
+                </ul>
+            </router-link>
         </div>
     </div>
 </template>
@@ -32,6 +36,10 @@ export default {
                 console.log(error)
             }
         }
+    },
+
+    created() {
+        this.consumirApi()
     }
 }
 
